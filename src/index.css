@@ -4,13 +4,15 @@
 
 @keyframes fill-up {
   0% {
-    width: 0%;
+    /* `transform` has better performance than using `width` */
+    transform: scaleX(0);
   }
   100% {
-    width: 100%;
+    transform: scaleX(1);
   }
 }
 
 .progress-bars {
+  transform-origin: left;
   animation: fill-up ease-in-out 2s;
 }
