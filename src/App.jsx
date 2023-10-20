@@ -6,6 +6,7 @@ import HolyGrail from './GreatFrontEnd.com/HolyGrail/HolyGrail'
 import ProgressBar from './GreatFrontEnd.com/ProgressBar/ProgressBar'
 import ProgressBars from './GreatFrontEnd.com/ProgressBars/ProgressBars'
 ProgressBars
+import TemperatureConverter from './GreatFrontEnd.com/TemperatureConverter/TemperatureConverter'
 
 import { ACCORDION_SECTIONS } from './data'
 
@@ -17,8 +18,9 @@ function App() {
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
-      <ProgressBar percentage={222} /> */}
-      <ProgressBars />
+      <ProgressBar percentage={222} />
+      <ProgressBars /> */}
+      <TemperatureConverter />
     </>
   )
 }
