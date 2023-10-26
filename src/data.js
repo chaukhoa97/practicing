@@ -1,4 +1,4 @@
-export const ACCORDION_SECTIONS = [
+export const SECTIONS = [
   {
     title: 'HTML',
     content:
