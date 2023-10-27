@@ -10,14 +10,15 @@ import TemperatureConverter from './GreatFrontEnd.com/TemperatureConverter/Tempe
 import MortgageCalculator from './GreatFrontEnd.com/MortgageCalculator/MortgageCalculator'
 import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
 import Tabs from './GreatFrontEnd.com/Tabs/Tabs'
+import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
 
 import { SECTIONS } from './data'
 
 function App() {
   return (
     <>
-      <Accordion sections={SECTIONS} />
-      {/* <ContactForm />
+      {/* <Accordion sections={SECTIONS} />
+      <ContactForm />
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
@@ -36,6 +37,7 @@ function App() {
         }}
       />
       <Tabs sections={SECTIONS} /> */}
+      <AnalogClock />
     </>
   )
 }
