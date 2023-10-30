@@ -13,6 +13,7 @@ import Tabs from './GreatFrontEnd.com/Tabs/Tabs'
 import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
 
 import { SECTIONS } from './data'
+import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
         }}
       />
       <Tabs sections={SECTIONS} /> */}
-      <AnalogClock />
+      {/* <AnalogClock /> */}
+      <GridLights />
     </>
   )
 }
