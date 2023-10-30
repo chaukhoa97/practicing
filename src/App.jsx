@@ -14,6 +14,7 @@ import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
 
 import { SECTIONS } from './data'
 import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
+import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
 
 function App() {
   return (
@@ -39,7 +40,8 @@ function App() {
       />
       <Tabs sections={SECTIONS} /> */}
       {/* <AnalogClock /> */}
-      <GridLights />
+      {/* <GridLights /> */}
+      <LikeButton />
     </>
   )
 }
