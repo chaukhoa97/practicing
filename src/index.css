@@ -12,7 +12,7 @@
   }
 }
 
-.progress-bars {
+.progress-bar {
   transform-origin: left;
   animation: fill-up ease-in-out 2s;
 }

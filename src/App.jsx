@@ -24,9 +24,9 @@ function App() {
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
-      <ProgressBar percentage={222} />
+      <ProgressBar percentage={222} /> */}
       <ProgressBars />
-      <TemperatureConverter />
+      {/* <TemperatureConverter />
       <MortgageCalculator />
       <Tweet
         name="John Doe"
