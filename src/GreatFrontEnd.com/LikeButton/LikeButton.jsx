@@ -24,11 +24,13 @@ export default function LikeButton() {
         }),
       },
     )
-    const data = await res.json()
-    setIsLoading(false)
-    if (data.message === 'Success!') {
+
+    if (res.ok) {
+      setIsLoading(false)
       setLiked(!liked)
     } else {
+      const data = await res.json()
+      setIsLoading(false)
       setErrorMessage(data.message)
     }
   }
