@@ -43,6 +43,7 @@ export default function LikeButton() {
           liked && 'border-red-400 bg-red-400 text-white hover:text-white',
         )}
         onClick={handleClick}
+        disabled={isLoading}
       >
         {isLoading ? <SpinnerIcon /> : <HeartIcon />}
         <span>Like</span>
