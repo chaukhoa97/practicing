@@ -15,3 +15,18 @@ export const SECTIONS = [
       'JavaScript, often abbreviated as JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS.',
   },
 ]
+
+export const TODOS = [
+  {
+    id: 1,
+    title: 'Learn HTML',
+  },
+  {
+    id: 2,
+    title: 'Learn CSS',
+  },
+  {
+    id: 3,
+    title: 'Learn JavaScript',
+  },
+]

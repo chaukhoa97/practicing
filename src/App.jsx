@@ -12,9 +12,11 @@ import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
 import Tabs from './GreatFrontEnd.com/Tabs/Tabs'
 import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
 
-import { SECTIONS } from './data'
+import { SECTIONS, TODOS } from './data'
 import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
 import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
+import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
+import TodoList from './GreatFrontEnd.com/Todo List/TodoList'
 
 function App() {
   return (
@@ -24,9 +26,9 @@ function App() {
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
-      <ProgressBar percentage={222} /> */}
+      <ProgressBar percentage={222} />
       <ProgressBars />
-      {/* <TemperatureConverter />
+      <TemperatureConverter />
       <MortgageCalculator />
       <Tweet
         name="John Doe"
@@ -37,11 +39,13 @@ function App() {
           retweetCount: 5,
           reactionCount: 8402,
         }}
-      />
-      <Tabs sections={SECTIONS} /> */}
-      {/* <AnalogClock /> */}
-      {/* <GridLights /> */}
+      /> */}
+      {/* <Tabs sections={SECTIONS} /> */}
+      {/* <AnalogClock />
+      <GridLights />
       <LikeButton />
+      <StarRating count={5} rating={4} /> */}
+      <TodoList todos={TODOS} />
     </>
   )
 }
