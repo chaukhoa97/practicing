@@ -18,6 +18,7 @@ import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
 import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
 import TodoList from './GreatFrontEnd.com/Todo List/TodoList'
 import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
+import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
 
 function App() {
   return (
@@ -47,7 +48,8 @@ function App() {
       <LikeButton />
       <StarRating count={5} rating={4} />
       <TodoList todos={TODOS} /> */}
-      <TrafficLight />
+      {/* <TrafficLight /> */}
+      <DigitalClock />
     </>
   )
 }
