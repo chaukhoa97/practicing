@@ -33,7 +33,7 @@ export default function GridLights() {
   }
 
   return (
-    <div className="grid w-64 grid-cols-3 gap-2">
+    <div className="grid w-fit grid-cols-3 gap-2">
       {baseArray.map((_, i) => {
         if (i === 4) return <div key={i} />
         return (

@@ -20,7 +20,7 @@ export default function DigitalClock() {
   }, [])
 
   return (
-    <time className="m-2 flex w-56 items-center justify-center border-4 border-gray-400 bg-black p-4 text-white">
+    <time className="m-2 flex w-fit items-center justify-center border-4 border-gray-400 bg-black p-4 text-white">
       <p
         className="text-4xl"
         // Similar to AnalogClock, the internals of the clock are for presentation purposes so they should be hided to screen readers.

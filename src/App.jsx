@@ -19,6 +19,7 @@ import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
 import TodoList from './GreatFrontEnd.com/Todo List/TodoList'
 import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
 import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
+import TicTacToe from './GreatFrontEnd.com/Tic-tac-toe/TicTacToe'
 
 function App() {
   return (
@@ -42,14 +43,15 @@ function App() {
           reactionCount: 8402,
         }}
       /> */}
-      {/* <Tabs sections={SECTIONS} />
-      <AnalogClock />
+      {/* <Tabs sections={SECTIONS} /> */}
       <GridLights />
-      <LikeButton />
+      {/* <LikeButton />
       <StarRating count={5} rating={4} />
-      <TodoList todos={TODOS} /> */}
-      {/* <TrafficLight /> */}
+      <TodoList todos={TODOS} />
+      <TrafficLight /> */}
+      {/* <AnalogClock /> */}
       <DigitalClock />
+      <TicTacToe />
     </>
   )
 }
