@@ -72,7 +72,7 @@ export default function TicTacToe() {
         ) : (
           <p>Draw</p>
         ))}
-      <div className="w grid max-w-max grid-cols-3">
+      <div className="grid max-w-max grid-cols-3">
         {data.map((item, index) => (
           <button
             key={index}
@@ -82,6 +82,8 @@ export default function TicTacToe() {
               [0, 1, 3, 4, 6, 7].includes(index) && 'border-r',
             )}
             onClick={() => handleClick(index)}
+            disabled={data[index] || result}
+            {...(!item && { 'aria-label': 'empty' })}
           >
             {item}
           </button>

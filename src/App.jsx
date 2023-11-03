@@ -43,14 +43,14 @@ function App() {
           reactionCount: 8402,
         }}
       /> */}
-      {/* <Tabs sections={SECTIONS} /> */}
+      {/* <Tabs sections={SECTIONS} />
       <GridLights />
-      {/* <LikeButton />
+      <LikeButton />
       <StarRating count={5} rating={4} />
       <TodoList todos={TODOS} />
-      <TrafficLight /> */}
-      {/* <AnalogClock /> */}
-      <DigitalClock />
+      <TrafficLight />
+      <AnalogClock />
+      <DigitalClock /> */}
       <TicTacToe />
     </>
   )
