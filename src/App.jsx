@@ -20,12 +20,13 @@ import TodoList from './GreatFrontEnd.com/Todo List/TodoList'
 import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
 import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
 import TicTacToe from './GreatFrontEnd.com/Tic-tac-toe/TicTacToe'
+import JobBoard from './GreatFrontEnd.com/Job Board/JobBoard'
 
 function App() {
   return (
     <>
+      {/* <ContactForm /> */}
       {/* <Accordion sections={SECTIONS} />
-      <ContactForm />
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
@@ -42,16 +43,17 @@ function App() {
           retweetCount: 5,
           reactionCount: 8402,
         }}
-      /> */}
-      {/* <Tabs sections={SECTIONS} />
+      />
+      <Tabs sections={SECTIONS} />
       <GridLights />
       <LikeButton />
       <StarRating count={5} rating={4} />
       <TodoList todos={TODOS} />
       <TrafficLight />
       <AnalogClock />
-      <DigitalClock /> */}
-      <TicTacToe />
+      <DigitalClock />
+      <TicTacToe /> */}
+      <JobBoard />
     </>
   )
 }

@@ -17,7 +17,7 @@ export default function LikeButton() {
         method: 'POST',
         headers: {
           'Content-type': 'application/json', // `fetch` default is 'text/plain'
-          // axios default is 'application/json'
+          // we don't need this in axios because its default is 'application/json'
         },
         body: JSON.stringify({
           action: liked ? 'unlike' : 'like',
