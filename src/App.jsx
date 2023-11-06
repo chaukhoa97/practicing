@@ -57,9 +57,9 @@ function App() {
       <DigitalClock />
       <TicTacToe /> */}
       {/* <JobBoard /> */}
-      <SignUpForm />
+      {/* <SignUpForm /> */}
       <Stopwatch />
-      <TransferList />
+      {/* <TransferList /> */}
     </>
   )
 }
