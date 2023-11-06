@@ -21,6 +21,9 @@ import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
 import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
 import TicTacToe from './GreatFrontEnd.com/Tic-tac-toe/TicTacToe'
 import JobBoard from './GreatFrontEnd.com/Job Board/JobBoard'
+import SignUpForm from './GreatFrontEnd.com/Sign Up Form/SignUpForm'
+import Stopwatch from './GreatFrontEnd.com/Stopwatch/Stopwatch'
+import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
 
 function App() {
   return (
@@ -53,7 +56,10 @@ function App() {
       <AnalogClock />
       <DigitalClock />
       <TicTacToe /> */}
-      <JobBoard />
+      {/* <JobBoard /> */}
+      <SignUpForm />
+      <Stopwatch />
+      <TransferList />
     </>
   )
 }
