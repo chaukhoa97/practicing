@@ -12,7 +12,7 @@ import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
 import Tabs from './GreatFrontEnd.com/Tabs/Tabs'
 import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
 
-import { SECTIONS, TODOS } from './data'
+import { SECTIONS, TODOS, TRANSFER_LIST_DATA } from './data'
 import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
 import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
 import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
@@ -58,8 +58,8 @@ function App() {
       <TicTacToe /> */}
       {/* <JobBoard /> */}
       {/* <SignUpForm /> */}
-      <Stopwatch />
-      {/* <TransferList /> */}
+      {/* <Stopwatch /> */}
+      <TransferList data={TRANSFER_LIST_DATA} />
     </>
   )
 }
