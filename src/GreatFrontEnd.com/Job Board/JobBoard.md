@@ -2,8 +2,9 @@ Build a job board that displays the latest job postings fetched from the Hacker 
 
 ## Requirements
 
-- The page should show 6 jobs on initial load with a button to load more postings.
-- Clicking on the "Load more" button will load the next page of 6 postings. The button does not appear if there aren't any more postings to load.
+- The page should show X jobs on initial load with a button to load more postings.
+  - Clicking on the "Load more" button will load the next page of Y postings. The button does not appear if there aren't any more postings to load.
+  - Instead of a button, another approarch is to load more posts when the user scrolls to the bottom of the page.
 - If there's a url field returned for the job details, make the job title a link that opens the job details page in a new window when clicked.
 - The timestamp can be formatted in any way you like.
 

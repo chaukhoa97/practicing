@@ -19,6 +19,7 @@ export default function Tabs({ sections }) {
               }`}
               onClick={() => setActiveTab(s.title)}
               id={tabSectionId}
+              role="tab"
               aria-controls={tabPanelId}
               aria-selected={isActive}
             >
