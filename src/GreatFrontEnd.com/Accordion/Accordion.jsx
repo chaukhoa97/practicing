@@ -1,4 +1,3 @@
-// https://www.greatfrontend.com/questions/user-interface/accordion
 import { useState } from 'react'
 import { LuChevronDown } from 'react-icons/lu'
 import { cn } from '../../util'
@@ -15,8 +14,84 @@ export default function Accordion({ sections }) {
     setExpandedSections(newExpandedSections)
   }
 
+  function focusOnHeader(index) {
+    document.getElementById(`accordion-header-${sections[index].title}`).focus()
+  }
+
+  const handleKeyboardEvents = (event) => {
+    const activeItemId = document.activeElement.getAttribute('id')
+
+    // Only respond to these interactions if an accordion title is in focus.
+    if (activeItemId == null) {
+      return
+    }
+
+    switch (event.code) {
+      case 'ArrowUp': {
+        const index = sections.findIndex(
+          ({ title }) => `accordion-header-${title}` === activeItemId,
+        )
+        focusOnHeader(index > 0 ? index - 1 : sections.length - 1)
+        break
+      }
+      case 'ArrowDown': {
+        const index = sections.findIndex(
+          ({ title }) => `accordion-header-${title}` === activeItemId,
+        )
+        focusOnHeader(index < sections.length - 1 ? index + 1 : 0)
+        break
+      }
+      case 'Home': {
+        focusOnHeader(0)
+        break
+      }
+      case 'End': {
+        focusOnHeader(sections.length - 1)
+        break
+      }
+      default:
+        break
+    }
+  }
+
   return (
-    <div>
+    <div
+      onKeyDown={(e) => {
+        const activeItemId = document.activeElement.getAttribute('id')
+
+        // Only respond to these interactions if an accordion title is in focus.
+        if (activeItemId == null) {
+          return
+        }
+
+        switch (e.code) {
+          case 'ArrowUp': {
+            const index = sections.findIndex(
+              ({ title }) => `accordion-header-${title}` === activeItemId,
+            )
+            focusOnHeader(index > 0 ? index - 1 : sections.length - 1)
+            break
+          }
+          case 'ArrowDown': {
+            const index = sections.findIndex(
+              ({ title }) => `accordion-header-${title}` === activeItemId,
+            )
+            focusOnHeader(index < sections.length - 1 ? index + 1 : 0)
+            break
+          }
+          case 'Home': {
+            focusOnHeader(0)
+            break
+          }
+          case 'End': {
+            focusOnHeader(sections.length - 1)
+            break
+          }
+          default:
+            break
+        }
+      }}
+    >
       {sections.map((item) => {
         const isExpanded = expandedSections.has(item.title)
         const headerId = `accordion-header-${item.title}`

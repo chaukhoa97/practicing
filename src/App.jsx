@@ -28,8 +28,10 @@ import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
 function App() {
   return (
     <>
-      {/* <ContactForm /> */}
-      {/* <Accordion sections={SECTIONS} />
+      {/* <Accordion sections={SECTIONS} /> */}
+      <Tabs sections={SECTIONS} />
+      {/* <JobBoard />
+      <ContactForm />
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
@@ -47,7 +49,6 @@ function App() {
           reactionCount: 8402,
         }}
       />
-      <Tabs sections={SECTIONS} />
       <GridLights />
       <LikeButton />
       <StarRating count={5} rating={4} />
@@ -55,11 +56,10 @@ function App() {
       <TrafficLight />
       <AnalogClock />
       <DigitalClock />
-      <TicTacToe /> */}
-      {/* <JobBoard /> */}
-      {/* <SignUpForm /> */}
-      {/* <Stopwatch /> */}
-      <TransferList data={TRANSFER_LIST_DATA} />
+      <TicTacToe />
+      <SignUpForm />
+      <Stopwatch /> */}
+      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
     </>
   )
 }
