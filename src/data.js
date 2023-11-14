@@ -31,41 +31,45 @@ export const TODOS = [
   },
 ]
 
-export const TRANSFER_LIST_DATA = {
-  list1: [
-    {
-      id: 1,
-      label: 'HTML',
-    },
-    {
-      id: 2,
-      label: 'CSS',
-    },
-    {
-      id: 3,
-      label: 'JavaScript',
-    },
-    {
-      id: 4,
-      label: 'TypeScript',
-    },
-  ],
-  list2: [
-    {
-      id: 5,
-      label: 'Vue',
-    },
-    {
-      id: 6,
-      label: 'React',
-    },
-    {
-      id: 7,
-      label: 'Angular',
-    },
-    {
-      id: 8,
-      label: 'Svelte',
-    },
-  ],
-}
+export const TRANSFER_LIST_DATA = [
+  {
+    id: 1,
+    listId: 1,
+    label: 'HTML',
+  },
+  {
+    id: 2,
+    listId: 1,
+    label: 'CSS',
+  },
+  {
+    id: 3,
+    listId: 1,
+    label: 'JavaScript',
+  },
+  {
+    id: 4,
+    listId: 1,
+    label: 'TypeScript',
+  },
+  {
+    id: 5,
+    listId: 2,
+    label: 'Vue',
+  },
+  {
+    id: 6,
+    listId: 2,
+    label: 'React',
+  },
+  {
+    id: 7,
+    listId: 2,
+    label: 'Angular',
+  },
+  {
+    id: 8,
+    listId: 2,
+    label: 'Svelte',
+  },
+]

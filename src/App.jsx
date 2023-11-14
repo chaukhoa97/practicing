@@ -5,7 +5,6 @@ import GenerateTable from './GreatFrontEnd.com/GenerateTable/GenerateTable'
 import HolyGrail from './GreatFrontEnd.com/HolyGrail/HolyGrail'
 import ProgressBar from './GreatFrontEnd.com/ProgressBar/ProgressBar'
 import ProgressBars from './GreatFrontEnd.com/ProgressBars/ProgressBars'
-ProgressBars
 import TemperatureConverter from './GreatFrontEnd.com/TemperatureConverter/TemperatureConverter'
 import MortgageCalculator from './GreatFrontEnd.com/MortgageCalculator/MortgageCalculator'
 import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
@@ -24,12 +23,13 @@ import JobBoard from './GreatFrontEnd.com/Job Board/JobBoard'
 import SignUpForm from './GreatFrontEnd.com/Sign Up Form/SignUpForm'
 import Stopwatch from './GreatFrontEnd.com/Stopwatch/Stopwatch'
 import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
+import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
 
 function App() {
   return (
     <>
-      {/* <Accordion sections={SECTIONS} /> */}
-      <Tabs sections={SECTIONS} />
+      {/* <Accordion sections={SECTIONS} />
+      <Tabs sections={SECTIONS} /> */}
       {/* <JobBoard />
       <ContactForm />
       <FlightBooker />
@@ -58,8 +58,9 @@ function App() {
       <DigitalClock />
       <TicTacToe />
       <SignUpForm />
-      <Stopwatch /> */}
-      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
+      <Stopwatch />
+      <TransferList data={TRANSFER_LIST_DATA} /> */}
+      <UndoableCounter />
     </>
   )
 }
