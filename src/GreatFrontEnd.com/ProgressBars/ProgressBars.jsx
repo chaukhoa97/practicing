@@ -5,7 +5,7 @@ import { cn } from '../../util'
 
 export default function ProgressBars() {
   const [barCount, setBarCount] = useState(0)
-  const [activeBarIndexes, setActiveBarIndexes] = useState([0])
+  const [activeBarIndexes, setActiveBarIndexes] = useState([0, 1, 2])
 
   const barIndexes = Array.from({ length: barCount }, (_, i) => i)
 

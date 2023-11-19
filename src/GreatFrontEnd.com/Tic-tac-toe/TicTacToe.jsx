@@ -12,6 +12,8 @@ const WIN_CONDITIONS = [
   [2, 4, 6],
 ]
 
+const DEFAULT_DATA = Array(9).fill(null)
+
 const haveAllElements = (target, source) => {
   for (let i = 0; i < source.length; i++) {
     if (!target.includes(source[i])) return false
@@ -27,24 +29,22 @@ const getIndexes = (element, array) => {
     .filter((item) => item !== undefined)
 }
 
-const defaultData = Array(9).fill(null)
-
 export default function TicTacToe() {
-  const [data, setData] = useState(defaultData)
+  const [data, setData] = useState(DEFAULT_DATA)
 
   const [isPlayerXTurn, setIsPlayerXTurn] = useState(true)
   const [result, setResult] = useState(null)
 
   const handleClick = (index) => {
     if (!data[index] && !result) {
-      let xIndexes, oIndexes
       setIsPlayerXTurn(!isPlayerXTurn)
+
       setData((prev) => {
         const newArray = [...prev]
         newArray.splice(index, 1, isPlayerXTurn ? 'X' : 'O')
 
-        xIndexes = getIndexes('X', newArray)
-        oIndexes = getIndexes('O', newArray)
+        let xIndexes = getIndexes('X', newArray)
+        let oIndexes = getIndexes('O', newArray)
 
         for (let i = 0; i < WIN_CONDITIONS.length; i++) {
           if (haveAllElements(xIndexes, WIN_CONDITIONS[i])) setResult('X')
@@ -59,19 +59,23 @@ export default function TicTacToe() {
   }
 
   const reset = () => {
-    setData(defaultData)
+    setData(DEFAULT_DATA)
     setResult(null)
     setIsPlayerXTurn(true)
   }
 
   return (
     <div className="m-2">
-      {result &&
-        (result === 'X' || result === 'O' ? (
-          <p>Player {result} win!</p>
-        ) : (
-          <p>Draw</p>
-        ))}
+      {/* indicates that the content of the element may be updated dynamically and should be announced by screen readers. */}
+      {result && (
+        <div aria-live="polite">
+          {result === 'X' || result === 'O' ? (
+            <p>Player {result} win!</p>
+          ) : (
+            <p>Draw</p>
+          )}
+        </div>
+      )}
       <div className="grid max-w-max grid-cols-3">
         {data.map((item, index) => (
           <button

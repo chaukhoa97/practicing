@@ -30,13 +30,13 @@ function App() {
     <>
       {/* <Accordion sections={SECTIONS} />
       <Tabs sections={SECTIONS} /> */}
-      {/* <JobBoard />
+      {/* <ProgressBars />
+      <JobBoard />
       <ContactForm />
       <FlightBooker />
       <GenerateTable />
       <HolyGrail />
       <ProgressBar percentage={222} />
-      <ProgressBars />
       <TemperatureConverter />
       <MortgageCalculator />
       <Tweet
@@ -52,15 +52,15 @@ function App() {
       <GridLights />
       <LikeButton />
       <StarRating count={5} rating={4} />
-      <TodoList todos={TODOS} />
-      <TrafficLight />
-      <AnalogClock />
-      <DigitalClock />
+      <TodoList todos={TODOS} /> */}
+      {/* <TrafficLight /> */}
+      {/* <AnalogClock />
+      <DigitalClock /> */}
       <TicTacToe />
-      <SignUpForm />
+      {/* <SignUpForm />
       <Stopwatch />
-      <TransferList data={TRANSFER_LIST_DATA} /> */}
-      <UndoableCounter />
+      <TransferList data={TRANSFER_LIST_DATA} />
+      <UndoableCounter /> */}
     </>
   )
 }
