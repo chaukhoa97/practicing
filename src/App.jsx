@@ -24,6 +24,7 @@ import SignUpForm from './GreatFrontEnd.com/Sign Up Form/SignUpForm'
 import Stopwatch from './GreatFrontEnd.com/Stopwatch/Stopwatch'
 import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
 import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
+import ModalExample from './FrontEndEval.com/Modal/Modal'
 
 function App() {
   return (
@@ -56,11 +57,12 @@ function App() {
       {/* <TrafficLight /> */}
       {/* <AnalogClock />
       <DigitalClock /> */}
-      <TicTacToe />
+      {/* <TicTacToe /> */}
       {/* <SignUpForm />
       <Stopwatch />
       <TransferList data={TRANSFER_LIST_DATA} />
       <UndoableCounter /> */}
+      <ModalExample />
     </>
   )
 }
