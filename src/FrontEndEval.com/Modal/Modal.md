@@ -1,2 +1,3 @@
-![1](https://frontendeval.com/images/modal-1.png)
-![2](https://frontendeval.com/images/modal-2.png)
+- Disable scrolling of the background content while the modal is open.
+- Make the Esc key closes the modal as well.
+- Responsive: on mobile web the modal takes up the entire browser window.

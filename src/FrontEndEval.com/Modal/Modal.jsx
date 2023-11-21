@@ -1,61 +1,77 @@
 // https://frontendeval.com/questions/modal-overlay
-import { useState, useEffect, useCallback, useRef, useContext } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
-function Modal({ show, onConfirm, onClose, description, confirmText }) {
-  const handleXButton = () => {
-    onClose()
-  }
-  const handleConfirm = () => {
-    onConfirm()
-    onClose()
+function Modal({ isOpen, onClose, children }) {
+  const modalRef = useRef()
+
+  // Allow clicking outside to close the modal
+  const closeModal = (e) => {
+    if (modalRef.current === e.target) {
+      onClose()
+    }
   }
 
-  return show ? (
-    <div className="absolute h-screen w-screen bg-slate-400">
-      <div className="mx-auto max-w-xl border border-black p-4">
+  return isOpen ? (
+    // inset-0 applies top: 0, right: 0, bottom: 0, left: 0
+    // those will make a positioned element stretch to cover the whole viewport
+    <div
+      className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
+      onClick={closeModal}
+      ref={modalRef}
+    >
+      <div className="flex max-h-full max-w-xs flex-col overflow-auto bg-white p-4">
         <button
-          className="border border-black px-2 py-1"
-          onClick={handleXButton}
+          className="self-end border border-black px-2 py-0.5"
+          onClick={onClose}
         >
           X
         </button>
-        <div className="flex flex-col items-center justify-center">
-          <p>{description}</p>
-          <button
-            className="mt-4 border border-black px-2 py-1"
-            onClick={handleConfirm}
-          >
-            {confirmText}
-          </button>
-        </div>
+        {children}
       </div>
     </div>
   ) : null
 }
 
 export default function ModalExample() {
-  const [offerIsAccepted, setOfferIsAccepted] = useState(false)
   const [showModal, setShowModal] = useState(false)
+
+  // Prevent scrolling when modal is shown
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [showModal])
 
   return (
     <div className="m-2">
-      {offerIsAccepted ? (
-        <p>Offer accepted</p>
-      ) : (
-        <button
-          className="border border-black p-2"
-          onClick={() => setShowModal(true)}
-        >
-          Show offer
-        </button>
-      )}
-      <Modal
-        show={showModal}
-        onClose={() => setShowModal(false)}
-        onConfirm={() => setOfferIsAccepted(true)}
-        description="Click the button below to accept our amazing offer"
-        confirmText="Accept offer"
-      />
+      <button
+        className="mb-8 bg-blue-500 px-4 py-2 text-white"
+        onClick={() => setShowModal(true)}
+      >
+        Show offer
+      </button>
+      <p className="text-9xl">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut adipisci
+        dolor voluptatem, sed fugiat ratione ullam nostrum eos! Eaque id
+        excepturi nulla ad voluptate!
+      </p>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <div className="flex flex-col items-center justify-center gap-4">
+          <p className="text-4xl">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore
+            natus molestias quis accusamus in exercitationem ipsa nemo unde nam
+            sapiente.
+          </p>
+          <button
+            className="bg-green-500 px-4 py-2 text-white"
+            onClick={() => setShowModal(false)}
+          >
+            Accept offer
+          </button>
+        </div>
+      </Modal>
     </div>
   )
 }
