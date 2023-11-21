@@ -13,45 +13,8 @@ function useJobs() {
   const [details, setDetails] = useState([])
   const [lastPostIndex, setLastPostIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
-  const [hasMore, setHasMore] = useState(true)
-  const observer = useRef()
 
-  // Todo: Infinite loading
-  const lastJobElementRef = useCallback(
-    (node) => {
-      if (isLoading) return
-      if (observer.current) observer.current.disconnect()
-      observer.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          setLastPostIndex(
-            (prevLastPostIndex) => prevLastPostIndex + LOAD_MORE_POST_COUNT,
-          )
-        }
-      })
-      if (node) observer.current.observe(node)
-    },
-    [isLoading, hasMore],
-  )
-
-  const loadMore = async () => {
-    const newLastPostIndex = lastPostIndex + LOAD_MORE_POST_COUNT
-    setLastPostIndex(newLastPostIndex)
-
-    const thisFetchIds = ids.slice(lastPostIndex + 1, newLastPostIndex + 1)
-    setIsLoading(true)
-
-    const promises = thisFetchIds.map((id) => fetch(getJobDetailURL(id)))
-    const responses = await Promise.all(promises)
-    const data = await Promise.all(
-      responses.map(async (res) => await res.json()),
-    )
-
-    setIsLoading(false)
-    setDetails((d) => {
-      return [...d, ...data]
-    })
-  }
-
+  // Mounted: Fetch for all IDs
   useEffect(() => {
     const fetchIds = async () => {
       const res = await fetch(JOB_STORIES_URL)
@@ -61,6 +24,7 @@ function useJobs() {
     fetchIds()
   }, [])
 
+  // Mounted: Fetch for first posts
   useEffect(() => {
     let ignore = false
     const thisFetchIds = ids.slice(0, INITIAL_POST_COUNT)
@@ -90,28 +54,67 @@ function useJobs() {
     }
   }, [ids])
 
-  return { details, loadMore, isLoading, lastJobElementRef }
+  const loadMore = useCallback(
+    async (count = 2) => {
+      const newLastPostIndex = lastPostIndex + count
+      setLastPostIndex(newLastPostIndex)
+
+      const thisFetchIds = ids.slice(lastPostIndex + 1, newLastPostIndex + 1)
+      setIsLoading(true)
+
+      const promises = thisFetchIds.map((id) => fetch(getJobDetailURL(id)))
+      const responses = await Promise.all(promises)
+      const data = await Promise.all(
+        responses.map(async (res) => await res.json()),
+      )
+
+      setIsLoading(false)
+      setDetails((d) => {
+        return [...d, ...data]
+      })
+    },
+    [ids, lastPostIndex],
+  )
+
+  // Infinite loading
+  useEffect(() => {
+    if (isLoading) return
+
+    const observer = new IntersectionObserver(async (entries) => {
+      // `entries` is an array of observed DOM nodes, in this case we only track one element (the last job card)
+      // "interseting" means the element is PARTIALLY visible in the viewport, which can be configured by `threshold` option
+      if (entries[0].isIntersecting) {
+        loadMore(LOAD_MORE_POST_COUNT)
+      }
+    })
+
+    // Assume that the last element have a class of `job-card`
+    const lastElement = document.querySelector('.job-card:last-of-type')
+    if (lastElement) observer.observe(lastElement)
+
+    return () => {
+      if (lastElement) observer.unobserve(lastElement)
+    }
+  }, [isLoading, loadMore])
+
+  return { details, loadMore, isLoading }
 }
 
 export default function JobBoard() {
-  const { details, loadMore, isLoading, lastJobElementRef } = useJobs()
+  const { details, loadMore, isLoading } = useJobs()
 
   return (
     <div className="mx-auto max-w-3xl">
       <h1 className="mb-6 text-4xl font-bold text-orange-500">
         Hacker News Jobs Board {details.length}
       </h1>
-      {details.map((item, index) => (
-        <JobCard
-          key={item.id}
-          detail={item}
-          // {...(index + 1 === details.length && { ref: lastJobElementRef })}
-        />
+      {details.map((item) => (
+        <JobCard key={item.id} detail={item} />
       ))}
       {isLoading && <div className="4xl">...</div>}
       <button
         className="rounded bg-orange-500 p-2 text-white"
-        onClick={loadMore}
+        onClick={() => loadMore(LOAD_MORE_POST_COUNT)}
         disabled={isLoading}
       >
         {isLoading ? 'Loading...' : 'Load more jobs'}
@@ -120,11 +123,11 @@ export default function JobBoard() {
   )
 }
 
-const JobCard = forwardRef(({ detail }, ref) => {
+const JobCard = ({ detail }) => {
   const { by, time, title, url } = detail
 
   return (
-    <div className="mb-4 rounded-sm border p-2" ref={ref}>
+    <div className="job-card mb-4 rounded-sm border p-2">
       <h3 className="text-lg font-bold">
         <a href={url} target="_blank">
           {title}
@@ -135,6 +138,4 @@ const JobCard = forwardRef(({ detail }, ref) => {
       </p>
     </div>
   )
-})
-
-JobCard.displayName = 'JobCard'
+}
