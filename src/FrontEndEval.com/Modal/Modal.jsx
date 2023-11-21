@@ -14,6 +14,7 @@ function Modal({ isOpen, onClose, children }) {
   return isOpen ? (
     // inset-0 applies top: 0, right: 0, bottom: 0, left: 0
     // those will make a positioned element stretch to cover the whole viewport
+    // https://tailwindcss.com/docs/top-right-bottom-left
     <div
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       onClick={closeModal}
