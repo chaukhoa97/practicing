@@ -65,7 +65,7 @@ export default function SignUpForm() {
           className="ml-2 border border-black"
         />
         {!usernameIsValid && hasTriedToSubmit && (
-          <p className="text-red-500">
+          <p className="text-red-500" aria-describedby="username">
             Username must be at least 4 characters and alphanumeric only
           </p>
         )}
@@ -74,7 +74,9 @@ export default function SignUpForm() {
         <label htmlFor="username">Email</label>
         <input id="email" name="email" className="ml-2 border border-black" />
         {!emailIsValid && hasTriedToSubmit && (
-          <p className="text-red-500">Email must be valid</p>
+          <p className="text-red-500" aria-describedby="email">
+            Email must be valid
+          </p>
         )}
       </div>
       <div className="mb-4">
@@ -86,7 +88,9 @@ export default function SignUpForm() {
           className="ml-2 border border-black"
         />
         {!passwordIsValid && hasTriedToSubmit && (
-          <p className="text-red-500">Password must be at least 6 characters</p>
+          <p className="text-red-500" aria-describedby="password">
+            Password must be at least 6 characters
+          </p>
         )}
       </div>
       <div className="mb-4">
@@ -98,7 +102,9 @@ export default function SignUpForm() {
           className="ml-2 border border-black"
         />
         {!passwordConfirmIsValid && hasTriedToSubmit && (
-          <p className="text-red-500">Confirm Password doesn't match</p>
+          <p className="text-red-500" aria-describedby="passwordConfirm">
+            Confirm Password doesn't match
+          </p>
         )}
       </div>
       <button className="border border-black p-2">Sign Up</button>
