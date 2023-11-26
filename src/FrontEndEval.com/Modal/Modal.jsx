@@ -4,12 +4,21 @@ import { useRef, useEffect, useState } from 'react'
 function Modal({ isOpen, onClose, children }) {
   const modalRef = useRef()
 
-  // Allow clicking outside to close the modal
-  const closeModal = (e) => {
-    if (modalRef.current === e.target) {
-      onClose()
+  // Focus the modal when it mounts to make keyboard event work
+  useEffect(() => {
+    if (isOpen) {
+      modalRef.current.focus()
     }
-  }
+  }, [isOpen])
+
+  // Prevent scrolling when modal is shown
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [isOpen])
 
   return isOpen ? (
     // inset-0 applies top: 0, right: 0, bottom: 0, left: 0
@@ -17,10 +26,12 @@ function Modal({ isOpen, onClose, children }) {
     // https://tailwindcss.com/docs/top-right-bottom-left
     <div
       className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
-      onClick={closeModal}
       ref={modalRef}
+      onClick={(e) => modalRef.current === e.target && onClose()} // Allow clicking outside to close the modal
+      tabIndex="0" // Make the `div` focusable
+      onKeyDown={(e) => e.code === 'Escape' && onClose()}
     >
-      <div className="flex max-h-full max-w-xs flex-col overflow-auto bg-white p-4">
+      <div className="flex max-h-full max-w-[90%] flex-col overflow-auto bg-white p-4 md:max-w-2xl">
         <button
           className="self-end border border-black px-2 py-0.5"
           onClick={onClose}
@@ -35,15 +46,6 @@ function Modal({ isOpen, onClose, children }) {
 
 export default function ModalExample() {
   const [showModal, setShowModal] = useState(false)
-
-  // Prevent scrolling when modal is shown
-  useEffect(() => {
-    if (showModal) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
-  }, [showModal])
 
   return (
     <div className="m-2">
