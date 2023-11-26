@@ -31,7 +31,7 @@ function App() {
     <>
       {/* <Accordion sections={SECTIONS} />
       <Tabs sections={SECTIONS} /> */}
-      {/* <JobBoard /> */}
+      <JobBoard />
       {/* <ProgressBars />
       <ContactForm />
       <FlightBooker />
@@ -62,7 +62,7 @@ function App() {
       <Stopwatch />
       <TransferList data={TRANSFER_LIST_DATA} />
       <UndoableCounter /> */}
-      <ModalExample />
+      {/* <ModalExample /> */}
     </>
   )
 }

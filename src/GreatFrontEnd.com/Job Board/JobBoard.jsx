@@ -5,14 +5,17 @@ const JOB_STORIES_URL = 'https://hacker-news.firebaseio.com/v0/jobstories.json'
 const getJobDetailURL = (id) =>
   `https://hacker-news.firebaseio.com/v0/item/${id}.json`
 
-const INITIAL_POST_COUNT = 5
-const LOAD_MORE_POST_COUNT = 2
+const INITIAL_POST_COUNT = 50
+const LOAD_MORE_POST_COUNT = 5
 
 function useJobs() {
   const [ids, setIds] = useState([])
   const [details, setDetails] = useState([])
   const [lastPostIndex, setLastPostIndex] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
+  const [isOutOfPost, setIsOutOfPost] = useState(false)
+
+  const totalPostCount = ids.length
 
   // Mounted: Fetch for all IDs
   useEffect(() => {
@@ -59,21 +62,25 @@ function useJobs() {
       const newLastPostIndex = lastPostIndex + count
       setLastPostIndex(newLastPostIndex)
 
-      const thisFetchIds = ids.slice(lastPostIndex + 1, newLastPostIndex + 1)
-      setIsLoading(true)
+      if (newLastPostIndex <= totalPostCount - 1) {
+        const thisFetchIds = ids.slice(lastPostIndex + 1, newLastPostIndex + 1)
+        setIsLoading(true)
 
-      const promises = thisFetchIds.map((id) => fetch(getJobDetailURL(id)))
-      const responses = await Promise.all(promises)
-      const data = await Promise.all(
-        responses.map(async (res) => await res.json()),
-      )
+        const promises = thisFetchIds.map((id) => fetch(getJobDetailURL(id)))
+        const responses = await Promise.all(promises)
+        const data = await Promise.all(
+          responses.map(async (res) => await res.json()),
+        )
 
-      setIsLoading(false)
-      setDetails((d) => {
-        return [...d, ...data]
-      })
+        setIsLoading(false)
+        setDetails((d) => {
+          return [...d, ...data]
+        })
+      } else {
+        setIsOutOfPost(true)
+      }
     },
-    [ids, lastPostIndex],
+    [ids, lastPostIndex, totalPostCount],
   )
 
   // Infinite loading
@@ -97,11 +104,11 @@ function useJobs() {
     }
   }, [isLoading, loadMore])
 
-  return { details, loadMore, isLoading }
+  return { details, loadMore, isLoading, isOutOfPost }
 }
 
 export default function JobBoard() {
-  const { details, loadMore, isLoading } = useJobs()
+  const { details, loadMore, isLoading, isOutOfPost } = useJobs()
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -112,10 +119,11 @@ export default function JobBoard() {
         <JobCard key={item.id} detail={item} />
       ))}
       {isLoading && <div className="4xl">...</div>}
+      {isOutOfPost && <p>Out of post</p>}
       <button
         className="rounded bg-orange-500 p-2 text-white"
         onClick={() => loadMore(LOAD_MORE_POST_COUNT)}
-        disabled={isLoading}
+        disabled={isLoading || isOutOfPost}
       >
         {isLoading ? 'Loading...' : 'Load more jobs'}
       </button>
