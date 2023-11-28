@@ -25,6 +25,7 @@ import Stopwatch from './GreatFrontEnd.com/Stopwatch/Stopwatch'
 import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
 import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
 import ModalExample from './FrontEndEval.com/Modal/Modal'
+import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
 
 function App() {
   return (
@@ -62,7 +63,8 @@ function App() {
       <Stopwatch />
       <TransferList data={TRANSFER_LIST_DATA} />
       <UndoableCounter /> */}
-      <ModalExample />
+      {/* <ModalExample /> */}
+      <MultistepForm />
     </>
   )
 }
