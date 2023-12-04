@@ -26,6 +26,7 @@ import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
 import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
 import ModalExample from './FrontEndEval.com/Modal/Modal'
 import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
+import TwoFactorCodeInput from './FrontEndEval.com/TwoFactorCodeInput/TwoFactorCodeInput'
 
 function App() {
   return (
@@ -64,7 +65,8 @@ function App() {
       <TransferList data={TRANSFER_LIST_DATA} />
       <UndoableCounter /> */}
       {/* <ModalExample /> */}
-      <MultistepForm />
+      {/* <MultistepForm /> */}
+      <TwoFactorCodeInput />
     </>
   )
 }
