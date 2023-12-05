@@ -5,32 +5,37 @@ const DEFAULT_TIME = {
   millisecond: 0,
 }
 
+const MS_IN_SECOND = 1000
+
 export default function Stopwatch() {
   const [isRunning, setIsRunning] = useState(false)
-  const [time, setTime] = useState(DEFAULT_TIME)
+  const [displayedTime, setDisplayedTime] = useState(DEFAULT_TIME)
 
   useEffect(() => {
     let intervalId
 
     if (isRunning) {
       const clickingTime = new Date().getTime()
-      const currentShowedSecond = time.second
-      const currentShowedMillisecond = time.millisecond
+      const currentDisplayedSecond = displayedTime.second
+      const currentDisplayedMillisecond = displayedTime.millisecond
 
       intervalId = setInterval(() => {
         const currentTime = new Date().getTime()
+
         const passedTime = currentTime - clickingTime
         const passedSecond = new Date(passedTime).getSeconds()
         const passedMillisecond = new Date(passedTime).getMilliseconds()
-        const finalMillisecond =
-          (currentShowedMillisecond + passedMillisecond) % 1000
-        const convertedSecondFromMillisecond = Math.floor(
-          (currentShowedMillisecond + passedMillisecond) / 1000,
-        )
-        const finalSecond =
-          currentShowedSecond + passedSecond + convertedSecondFromMillisecond
 
-        setTime({
+        const finalMillisecond =
+          (currentDisplayedMillisecond + passedMillisecond) % MS_IN_SECOND
+        const finalSecond =
+          currentDisplayedSecond +
+          passedSecond +
+          Math.floor(
+            (currentDisplayedMillisecond + passedMillisecond) / MS_IN_SECOND,
+          )
+
+        setDisplayedTime({
           second: finalSecond,
           millisecond: finalMillisecond,
         })
@@ -38,26 +43,24 @@ export default function Stopwatch() {
     }
 
     return () => clearInterval(intervalId)
-  }, [isRunning, time.millisecond, time.second])
-
-  const handleFirstButton = () => {
-    setIsRunning(!isRunning)
-  }
+  }, [isRunning, displayedTime.millisecond, displayedTime.second])
 
   const handleResetButton = () => {
     setIsRunning(false)
-    setTime(DEFAULT_TIME)
+    setDisplayedTime(DEFAULT_TIME)
   }
 
   return (
     <div>
       <p>
-        {time.second}s {time.millisecond}ms
+        {displayedTime.second}s {displayedTime.millisecond}ms
       </p>
       <div>
         <button
           className="mr-2 border border-black p-2"
-          onClick={handleFirstButton}
+          onClick={() => {
+            setIsRunning(!isRunning)
+          }}
         >
           {isRunning ? 'Stop' : 'Start'}
         </button>

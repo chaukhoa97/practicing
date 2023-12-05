@@ -82,7 +82,6 @@ export default function UndoableCounter() {
       <hr></hr>
       <div className="mb-4 flex items-center">
         <span className="order-1">{latestValue}</span>
-        {/* order-0, order-1, order-2, order-3 */}
         {OPERATIONS.map((operation, index) => (
           <button
             key={operation}

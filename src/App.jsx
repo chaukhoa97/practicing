@@ -27,22 +27,23 @@ import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounte
 import ModalExample from './FrontEndEval.com/Modal/Modal'
 import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
 import TwoFactorCodeInput from './FrontEndEval.com/TwoFactorCodeInput/TwoFactorCodeInput'
+import CryptoConverter from './FrontEndEval.com/CryptoConverter/CryptoConverter'
 
 function App() {
   return (
     <>
-      {/* <Accordion sections={SECTIONS} />
-      <Tabs sections={SECTIONS} /> */}
+      {/* <Accordion sections={SECTIONS} /> */}
+      {/* <Tabs sections={SECTIONS} /> */}
       {/* <JobBoard /> */}
-      {/* <ProgressBars />
-      <ContactForm />
-      <FlightBooker />
-      <GenerateTable />
-      <HolyGrail />
-      <ProgressBar percentage={222} />
-      <TemperatureConverter />
-      <MortgageCalculator />
-      <Tweet
+      {/* <ProgressBars /> */}
+      {/* <ContactForm /> */}
+      {/* <FlightBooker /> */}
+      {/* <GenerateTable /> */}
+      {/* <HolyGrail /> */}
+      {/* <ProgressBar percentage={222} /> */}
+      {/* <TemperatureConverter /> */}
+      {/* <MortgageCalculator /> */}
+      {/* <Tweet
         name="John Doe"
         metadata={{ account: 'johndoe', date: new Date() }}
         message="Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nemo ducimus mollitia error sint cumque reprehenderit eum recusandae dolorem debitis magnam saepe magni eos tempore sequi, voluptatem quis autem doloremque? Consequatur, porro possimus iusto ratione delectus mollitia laboriosam hic dolore amet repellendus recusandae impedit libero modi animi, perferendis dicta. At."
@@ -51,22 +52,23 @@ function App() {
           retweetCount: 5,
           reactionCount: 8402,
         }}
-      />
-      <GridLights />
-      <LikeButton />
-      <StarRating count={5} rating={4} />
-      <TodoList todos={TODOS} /> */}
+      /> */}
+      {/* <GridLights /> */}
+      {/* <LikeButton /> */}
+      {/* <StarRating count={5} rating={4} /> */}
+      {/* <TodoList todos={TODOS} /> */}
       {/* <TrafficLight /> */}
       {/* <AnalogClock />
       <DigitalClock /> */}
       {/* <TicTacToe /> */}
-      {/* <SignUpForm />
-      <Stopwatch />
-      <TransferList data={TRANSFER_LIST_DATA} />
-      <UndoableCounter /> */}
+      {/* <SignUpForm /> */}
+      {/* <Stopwatch /> */}
+      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
+      {/* <UndoableCounter /> */}
       {/* <ModalExample /> */}
       {/* <MultistepForm /> */}
-      <TwoFactorCodeInput />
+      {/* <TwoFactorCodeInput /> */}
+      <CryptoConverter />
     </>
   )
 }
