@@ -28,6 +28,7 @@ import ModalExample from './FrontEndEval.com/Modal/Modal'
 import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
 import TwoFactorCodeInput from './FrontEndEval.com/TwoFactorCodeInput/TwoFactorCodeInput'
 import CryptoConverter from './FrontEndEval.com/CryptoConverter/CryptoConverter'
+import LocalStorage from './Codedamn.com/LocalStorage/LocalStorage'
 
 function App() {
   return (
@@ -68,7 +69,8 @@ function App() {
       {/* <ModalExample /> */}
       {/* <MultistepForm /> */}
       {/* <TwoFactorCodeInput /> */}
-      <CryptoConverter />
+      {/* <CryptoConverter /> */}
+      <LocalStorage />
     </>
   )
 }
