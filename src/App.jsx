@@ -33,17 +33,38 @@ import LocalStorage from './Codedamn.com/LocalStorage/LocalStorage'
 function App() {
   return (
     <>
+      {/* LOGIC */}
       {/* <Accordion sections={SECTIONS} /> */}
-      {/* <Tabs sections={SECTIONS} /> */}
+      <Tabs sections={SECTIONS} />
       {/* <JobBoard /> */}
-      {/* <ProgressBars /> */}
+      {/* <TodoList todos={TODOS} /> */}
+      {/* LOGIC-Minor */}
+      {/* <GridLights /> */}
+      {/* <StarRating count={5} rating={4} /> */}
+      {/* <TrafficLight /> */}
+      {/* <TicTacToe /> */}
+      {/* <Stopwatch /> */}
+      {/* <CryptoConverter /> */}
+      {/* <LocalStorage /> */}
+      {/* <UndoableCounter /> */}
+      {/* LOGIC-Hard & Unfinished */}
+      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
+      {/* <TwoFactorCodeInput /> */}
+
+      {/* FORM  */}
       {/* <ContactForm /> */}
       {/* <FlightBooker /> */}
-      {/* <GenerateTable /> */}
-      {/* <HolyGrail /> */}
-      {/* <ProgressBar percentage={222} /> */}
       {/* <TemperatureConverter /> */}
       {/* <MortgageCalculator /> */}
+      {/* <SignUpForm /> */}
+      {/* <MultistepForm /> */}
+
+      {/* STYLING */}
+      {/* <ModalExample /> */}
+      {/* <ProgressBar percentage={222} /> */}
+      {/* <ProgressBars /> */}
+      {/* <GenerateTable /> */}
+      {/* <HolyGrail /> */}
       {/* <Tweet
         name="John Doe"
         metadata={{ account: 'johndoe', date: new Date() }}
@@ -54,23 +75,9 @@ function App() {
           reactionCount: 8402,
         }}
       /> */}
-      {/* <GridLights /> */}
+      {/* <AnalogClock /> */}
+      {/* <DigitalClock /> */}
       {/* <LikeButton /> */}
-      {/* <StarRating count={5} rating={4} /> */}
-      {/* <TodoList todos={TODOS} /> */}
-      {/* <TrafficLight /> */}
-      {/* <AnalogClock />
-      <DigitalClock /> */}
-      {/* <TicTacToe /> */}
-      {/* <SignUpForm /> */}
-      {/* <Stopwatch /> */}
-      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
-      {/* <UndoableCounter /> */}
-      {/* <ModalExample /> */}
-      {/* <MultistepForm /> */}
-      {/* <TwoFactorCodeInput /> */}
-      {/* <CryptoConverter /> */}
-      <LocalStorage />
     </>
   )
 }
