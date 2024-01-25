@@ -1,68 +1,112 @@
 import Accordion from './GreatFrontEnd.com/Accordion/Accordion'
-import ContactForm from './GreatFrontEnd.com/ContactForm/ContactForm'
-import FlightBooker from './GreatFrontEnd.com/FlightBooker/FlightBooker'
-import GenerateTable from './GreatFrontEnd.com/GenerateTable/GenerateTable'
-import HolyGrail from './GreatFrontEnd.com/HolyGrail/HolyGrail'
-import ProgressBar from './GreatFrontEnd.com/ProgressBar/ProgressBar'
-import ProgressBars from './GreatFrontEnd.com/ProgressBars/ProgressBars'
-import TemperatureConverter from './GreatFrontEnd.com/TemperatureConverter/TemperatureConverter'
-import MortgageCalculator from './GreatFrontEnd.com/MortgageCalculator/MortgageCalculator'
-import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
 import Tabs from './GreatFrontEnd.com/Tabs/Tabs'
-import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
-
-import { SECTIONS, TODOS, TRANSFER_LIST_DATA } from './data'
-import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
-import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
-import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
-import TodoList from './GreatFrontEnd.com/Todo List/TodoList'
-import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
-import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
-import TicTacToe from './GreatFrontEnd.com/Tic-tac-toe/TicTacToe'
 import JobBoard from './GreatFrontEnd.com/Job Board/JobBoard'
-import SignUpForm from './GreatFrontEnd.com/Sign Up Form/SignUpForm'
+import TodoList from './GreatFrontEnd.com/TodoList/TodoList'
+
+import GridLights from './GreatFrontEnd.com/GridLights/GridLights'
+import StarRating from './GreatFrontEnd.com/StarRating/StarRating'
+import TrafficLight from './GreatFrontEnd.com/Traffic Light/TrafficLight'
+import TicTacToe from './GreatFrontEnd.com/Tic-tac-toe/TicTacToe'
 import Stopwatch from './GreatFrontEnd.com/Stopwatch/Stopwatch'
-import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
-import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
-import ModalExample from './FrontEndEval.com/Modal/Modal'
-import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
-import TwoFactorCodeInput from './FrontEndEval.com/TwoFactorCodeInput/TwoFactorCodeInput'
 import CryptoConverter from './FrontEndEval.com/CryptoConverter/CryptoConverter'
 import LocalStorage from './Codedamn.com/LocalStorage/LocalStorage'
+import UndoableCounter from './GreatFrontEnd.com/Undoable Counter/UndoableCounter'
+
+import TransferList from './GreatFrontEnd.com/Transfer List/TransferList'
+import TwoFactorCodeInput from './FrontEndEval.com/TwoFactorCodeInput/TwoFactorCodeInput'
+
+import ContactForm from './GreatFrontEnd.com/ContactForm/ContactForm'
+import FlightBooker from './GreatFrontEnd.com/FlightBooker/FlightBooker'
+import TemperatureConverter from './GreatFrontEnd.com/TemperatureConverter/TemperatureConverter'
+import MortgageCalculator from './GreatFrontEnd.com/MortgageCalculator/MortgageCalculator'
+import SignUpForm from './GreatFrontEnd.com/Sign Up Form/SignUpForm'
+import MultistepForm from './FrontEndEval.com/MultistepForm/MultistepForm'
+
+import ModalExample from './FrontEndEval.com/Modal/Modal'
+import ProgressBar from './GreatFrontEnd.com/ProgressBar/ProgressBar'
+import ProgressBars from './GreatFrontEnd.com/ProgressBars/ProgressBars'
+import GenerateTable from './GreatFrontEnd.com/GenerateTable/GenerateTable'
+import HolyGrail from './GreatFrontEnd.com/HolyGrail/HolyGrail'
+import Tweet from './GreatFrontEnd.com/Tweet/Tweet'
+import AnalogClock from './GreatFrontEnd.com/AnalogClock/AnalogClock'
+import DigitalClock from './GreatFrontEnd.com/DigitalClock/DigitalClock'
+import LikeButton from './GreatFrontEnd.com/LikeButton/LikeButton'
+import { SECTIONS, TODOS, TRANSFER_LIST_DATA } from './data'
+import TodoList20231214 from './Reattempt/TodoList20231214'
+import ContactForm20231219 from './Reattempt/ContactForm20231219'
+import Accordion20231221 from './Reattempt/Accordion20231221'
+import Tabs20240106 from './Reattempt/Tabs20240106'
+import JobBoard20240107 from './Reattempt/JobBoard20240107'
+import FlightBooker20240109 from './Reattempt/FlightBooker20240109'
+import LocalStorage20240115 from './Reattempt/LocalStorage20240115'
+import Modal202401016 from './Reattempt/Modal202401016'
+import TemperatureConverter20240117 from './Reattempt/TemperatureConverter20240117'
+import { Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import TodoList20240122 from './Reattempt/TodoList20240122'
+import Test from './Test'
+import MultistepForm20240124 from './Reattempt/MultistepForm20240124'
 
 function App() {
   return (
     <>
-      {/* LOGIC */}
+      {/* <Test /> */}
+      {/* MAJOR */}
+
+      {/* BASIC */}
       {/* <Accordion sections={SECTIONS} /> */}
-      <Tabs sections={SECTIONS} />
-      {/* <JobBoard /> */}
+      {/* <Tabs sections={SECTIONS} /> */}
       {/* <TodoList todos={TODOS} /> */}
-      {/* LOGIC-Minor */}
+      {/* <LocalStorage /> */}
+      {/* <ModalExample /> */}
+
+      {/* FETCHING */}
+      {/* <JobBoard /> */}
+
+      {/* FORM  */}
+      {/* <ContactForm /> */}
+      {/* <TemperatureConverter /> */}
+      {/* <MultistepForm /> */}
+
+      {/* DATE TIME */}
+      {/* <FlightBooker /> */}
+      {/* <Stopwatch /> */}
+
+      {/* REATTEMPT */}
+      {/* <TodoList20231214 /> */}
+      {/* <TodoList20240122 /> */}
+      {/* <ContactForm20231219 /> */}
+      {/* <Accordion20231221 sections={SECTIONS} /> */}
+      {/* <Tabs20240106 sections={SECTIONS} /> */}
+      {/* <JobBoard20240107 /> */}
+      {/* <FlightBooker20240109 /> */}
+      {/* <LocalStorage20240115 /> */}
+      {/* <Modal202401016 /> */}
+      {/* <TemperatureConverter20240117 /> */}
+      <MultistepForm20240124 />
+
+      {/* MINOR */}
+
+      {/* BASIC */}
       {/* <GridLights /> */}
       {/* <StarRating count={5} rating={4} /> */}
       {/* <TrafficLight /> */}
       {/* <TicTacToe /> */}
-      {/* <Stopwatch /> */}
-      {/* <CryptoConverter /> */}
-      {/* <LocalStorage /> */}
       {/* <UndoableCounter /> */}
-      {/* LOGIC-Hard & Unfinished */}
-      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
       {/* <TwoFactorCodeInput /> */}
+      {/* BASIC-HARD */}
+      {/* <ProgressBars /> */}
+      {/* <TransferList data={TRANSFER_LIST_DATA} /> */}
 
-      {/* FORM  */}
-      {/* <ContactForm /> */}
-      {/* <FlightBooker /> */}
-      {/* <TemperatureConverter /> */}
-      {/* <MortgageCalculator /> */}
+      {/* FORM */}
       {/* <SignUpForm /> */}
-      {/* <MultistepForm /> */}
+      {/* <MortgageCalculator /> */}
+
+      {/* FETCHING */}
+      {/* <CryptoConverter /> */}
 
       {/* STYLING */}
-      {/* <ModalExample /> */}
       {/* <ProgressBar percentage={222} /> */}
-      {/* <ProgressBars /> */}
       {/* <GenerateTable /> */}
       {/* <HolyGrail /> */}
       {/* <Tweet

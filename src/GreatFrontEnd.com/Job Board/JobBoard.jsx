@@ -89,13 +89,13 @@ function useJobs() {
 
     const observer = new IntersectionObserver(async (entries) => {
       // `entries` is an array of observed DOM nodes, in this case we only track one element (the last job card)
-      // "interseting" means the element is PARTIALLY visible in the viewport, which can be configured by `threshold` option
+      // "intersecting" means the element is PARTIALLY visible in the viewport, which can be configured by `threshold` option
       if (entries[0].isIntersecting) {
         loadMore(LOAD_MORE_POST_COUNT)
       }
     })
 
-    // Assume that the last element have a class of `job-card`
+    // Assume that every element have a class of `job-card`
     const lastElement = document.querySelector('.job-card:last-of-type')
     if (lastElement) observer.observe(lastElement)
 

@@ -1,3 +1,4 @@
+- Have a button to open.
+- Clicking the close button and outside the modal should close it.
 - Disable scrolling of the background content while the modal is open.
-- Make the Esc key closes the modal as well.
-- Responsive: on mobile web the modal takes up the entire browser window.
+- (Optimization) Make the Esc key closes the modal as well.

@@ -38,7 +38,6 @@ export default function TodoList({ todos = [] }) {
       <h1 className="bold mb-4 text-2xl">Todo List</h1>
       <form className="flex" onSubmit={handleAdd}>
         <input
-          type="text"
           name="title"
           placeholder="Add your task"
           className="border border-black"

@@ -5,7 +5,6 @@
   - If the section is collapsed, the section will be expanded and the contents will be displayed.
   - If the section is expanded, the section will be collapsed and the contents will be hidden.
 - The sections are independent of each other.
-- [Example](https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/)
 
 ## Notes
 

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 
 const getTime = () => {
-  const eventTime = new Date()
-  const localeTimeString = eventTime.toLocaleTimeString()
-  const second = eventTime.getSeconds()
-  const minute = eventTime.getMinutes()
-  const hour = eventTime.getHours()
+  const timeStamp = new Date()
+  const localeTimeString = timeStamp.toLocaleTimeString()
+  const second = timeStamp.getSeconds()
+  const minute = timeStamp.getMinutes()
+  const hour = timeStamp.getHours()
   return { localeTimeString, second, minute, hour }
 }
 

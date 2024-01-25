@@ -5,10 +5,10 @@ export default function DigitalClock() {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      const eventTime = new Date()
+      const timeStamp = new Date()
 
       setFormattedTime(
-        eventTime.toLocaleString(undefined, {
+        timeStamp.toLocaleString(undefined, {
           minimumIntegerDigits: 2,
           timeStyle: 'medium',
           hour12: false,

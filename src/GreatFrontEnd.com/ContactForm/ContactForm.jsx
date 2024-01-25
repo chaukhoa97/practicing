@@ -1,9 +1,15 @@
 // https://www.greatfrontend.com/questions/user-interface/contact-form
+import { useRef } from 'react'
 
 export default function ContactForm() {
+  const formRef = useRef()
+
   return (
     <form
-      onSubmit={submitForm}
+      onSubmit={() => {
+        submitForm()
+        formRef.current.reset()
+      }}
       method="post"
       action="https://www.greatfrontend.com/api/questions/contact-form"
     >

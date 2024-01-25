@@ -9,10 +9,6 @@ The form should contain the following elements:
 
 ## Submission API
 
-- Upon submission, POST the form data to <https://www.greatfrontend.com/api/questions/contact-form> with the following fields in the request body: name, email, message.
+- Upon submission, POST the form data to <https://www.greatfrontend.com/api/questions/contact-form> with the following fields in the request body: `name`, `email`, `message`. The submit function has been already implemented for you.
 
 - If all the form fields are correctly filled up, you will see an alert containing a success message. Congratulations!
-
-## Notes
-
-You do not really need JavaScript for this question, the focus is on HTML form validation and submission.
