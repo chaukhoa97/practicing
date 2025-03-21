@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input {
+  border: 1px solid black;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid black;
+  align-self: self-start;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: red;
+  height: 60px;
+}
+.nav {
+  background-color: orange;
+  flex-basis: 100px;
+  font-size: 60px;
+}
+.main {
+  background-color: beige;
+  flex-grow: 1;
+}
+.aside {
+  background-color: yellow;
+  flex-basis: 100px;
+}
+.footer {
+  background-color: gray;
+  height: 100px;
+}
+
+.mainContent {
+  display: flex;
+  flex-grow: 1;
+}

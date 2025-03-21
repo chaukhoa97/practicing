@@ -4,8 +4,7 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import { SECTIONS } from './data.js'
-
-import Accordion from './GreatFrontEnd.com/Accordion/Accordion.jsx'
+import Accordion from './Accordion/Accordion.jsx'
 
 const router = createBrowserRouter([
   {

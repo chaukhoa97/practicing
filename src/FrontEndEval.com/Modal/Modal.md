@@ -1,4 +1,0 @@
-- Have a button to open.
-- Clicking the close button and outside the modal should close it.
-- Disable scrolling of the background content while the modal is open.
-- (Optimization) Make the Esc key closes the modal as well.
